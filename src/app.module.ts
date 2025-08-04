@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from './database/typeorm-config.service';
 import databaseConfig from './database/config/database.config';
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { ApiModule } from './api/api.module';
 
 @Module({
   imports: [
@@ -15,9 +15,15 @@ import databaseConfig from './database/config/database.config';
     }),
     TypeOrmModule.forRootAsync({
       useClass: TypeOrmConfigService,
+      dataSourceFactory: async (options: DataSourceOptions) => {
+        if (!options) {
+          throw new Error('Invalid options passed');
+        }
+
+        return new DataSource(options).initialize();
+      },
     }),
+    ApiModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
