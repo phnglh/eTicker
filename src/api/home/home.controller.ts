@@ -6,6 +6,8 @@ export class HomeController {
   @Get()
   @Public()
   home() {
-    return 'Welcome to the API';
+    return {
+      message: 'Welcome to the API',
+    };
   }
 }

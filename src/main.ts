@@ -11,6 +11,7 @@ import { ConfigService } from '@nestjs/config';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { type AllConfigType } from './config/config.type';
+import setupSwagger from './utils/setup-swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
@@ -60,8 +61,9 @@ async function bootstrap() {
   );
   app.useGlobalInterceptors(new ClassSerializerInterceptor(reflector));
 
-  // if (isDevelopment) {
-  // }
+  if (isDevelopment) {
+    setupSwagger(app);
+  }
 
   await app.listen(configService.getOrThrow('app.port', { infer: true }));
 
