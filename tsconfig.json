@@ -1,6 +1,6 @@
 {
   "ts-node": {
-    "require": ["tsconfig-paths/register"] // configuration for typeorm migration
+    "require": ["tsconfig-paths/register"]
   },
   "compilerOptions": {
     "module": "commonjs",
@@ -13,6 +13,25 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "@/api/*": ["src/api/*"],
+      "@/background/*": ["src/background/*"],
+      "@/common/*": ["src/common/*"],
+      "@/config/*": ["src/config/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/database/*": ["src/database/*"],
+      "@/decorators/*": ["src/decorators/*"],
+      "@/exceptions/*": ["src/exceptions/*"],
+      "@/filters/*": ["src/filters/*"],
+      "@/generated/*": ["src/generated/*"],
+      "@/guards/*": ["src/guards/*"],
+      "@/interceptors/*": ["src/interceptors/*"],
+      "@/libs/*": ["src/libs/*"],
+      "@/mail/*": ["src/mail/*"],
+      "@/redis/*": ["src/redis/*"],
+      "@/shared/*": ["src/shared/*"],
+      "@/utils/*": ["src/utils/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -21,6 +40,6 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
-    "importHelpers": true,
+    "importHelpers": true
   }
 }
