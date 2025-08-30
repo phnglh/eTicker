@@ -38,9 +38,14 @@ export class UserEntity extends AbstractEntity {
   @Column({
     name: 'full_name',
     length: 100,
+    nullable: true,
   })
-  fullName: string;
+  fullName?: string;
 
+  @Column({
+    name: 'test',
+    nullable: true,
+  })
   @Column({
     name: 'dob',
     type: 'date',

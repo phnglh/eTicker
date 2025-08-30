@@ -22,7 +22,7 @@
     "migration:up": "pnpm typeorm migration:run",
     "migration:down": "pnpm typeorm migration:revert",
     "migration:show": "pnpm typeorm migration:show",
-    "migration:create": "typeorm migration:create",
+    "migration:create": "pnpm typeorm migration:create",
     "migration:generate": "pnpm typeorm migration:generate --pretty",
     "db:create": "env-cmd ./node_modules/typeorm-extension/bin/cli.cjs db:create",
     "db:drop": "env-cmd ./node_modules/typeorm-extension/bin/cli.cjs db:drop",
