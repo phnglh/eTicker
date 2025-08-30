@@ -1,0 +1,7 @@
+{
+  "layout": {
+    "hello": "Hello, world!",
+    "welcome": "Welcome to our website!"
+  },
+  "not-found": "Page Not Found"
+}
