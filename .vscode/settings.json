@@ -1,0 +1,8 @@
+{
+  "[typescript]": {
+    "editor.inlineSuggest.suppressSuggestions": false
+  },
+  "[typescriptreact]": {
+    "editor.inlineSuggest.suppressSuggestions": false
+  }
+}
